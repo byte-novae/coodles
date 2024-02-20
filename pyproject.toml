@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "coodles"
+version = "0.1.0"
+description = ""
+authors = ["rand-net"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+coodles = "coodles.__init__:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+yt-dlp = "^2023.12.30"
+ffmpeg-python = "^0.2.0"
+periodictable = "^1.6.1"
+
+[tool.semantic_release]
+version_variable = [
+    "khan_dl/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
