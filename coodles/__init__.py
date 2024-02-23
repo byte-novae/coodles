@@ -3,6 +3,7 @@ import argparse
 from .get_channel_metadata import download_channel_metadata
 from .get_video_segments import download_video_segments
 from .get_elements_data import get_elements_videos
+from .generate_coodles_list import generate_coodles_json
 
 __version__ = "0.0.1"
 
@@ -30,6 +31,7 @@ def main(argv=None):
         print("Downloading channel metadata...")
         download_channel_metadata()
         get_elements_videos()
+        generate_coodles_json()
 
     if args.download_videos:
         print("Downloading coodles...")
